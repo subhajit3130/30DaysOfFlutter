@@ -21,7 +21,7 @@ class CatalogApp extends StatelessWidget {
         primarySwatch: Colors.teal,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      initialRoute: MyRoutes.loginRoute,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.indexRoute: (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
