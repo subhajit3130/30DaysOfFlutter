@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "iPhone 13 Pro Max",
+            "desc": "Apple iPhone 13th series",
+            "price": 129900.00,
+            "color": "#fdfdfa",
+            "image": "https://phonetechx.com/wp-content/uploads/2021/03/Apple-iPhone-13-Pro-Max.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Samsung M12",
+            "desc": "Samsung M12 4GB/64GB",
+            "price": 12999.00,
+            "color": "#fdfdfa",
+            "image": "https://priceinzambia.com/wp-content/uploads/2021/02/Samsung-Galaxy-M12-Price-in-Zambia-2048x2048.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Moto g60",
+            "desc": "Moto g60 6GB/128GB",
+            "price": 17999.00,
+            "color": "#fdfdfa",
+            "image": "https://www.bdprice.com.bd/wp-content/uploads/2021/04/Motorola-Moto-G60-500x500.jpg"
+        }
+    ]
+}
