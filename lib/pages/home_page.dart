@@ -1,6 +1,7 @@
 import 'package:catalog_app/model/catalog.dart';
 import 'package:catalog_app/widgets/drawer.dart';
-import 'package:catalog_app/widgets/item_widget.dart';
+// import 'package:catalog_app/widgets/item_widget.dart';
+import 'package:catalog_app/widgets/item_widget_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    // await Future.delayed(Duration(seconds: 5));
+    await Future.delayed(Duration(seconds: 2));
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
     // print(catalogJson.toString());
@@ -42,15 +43,34 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: ListView.builder(
-            itemCount: CatalogItems.items.length,
-            itemBuilder: (context, index) {
-              return ItemWidget(
-                item: CatalogItems.items[index],
-              );
-            }),
+        child: (CatalogItems.items != null && CatalogItems.items.isNotEmpty)
+            ? GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                ),
+                itemBuilder: (context, index) {
+                  return ItemWidgetGridView(
+                    item: CatalogItems.items[index],
+                  );
+                },
+                itemCount: CatalogItems.items.length,
+              )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
       drawer: MyDrawer(),
     );
   }
 }
+
+
+// ListView.builder(
+//                 itemCount: CatalogItems.items.length,
+//                 itemBuilder: (context, index) {
+//                   return ItemWidget(
+//                     item: CatalogItems.items[index],
+//                   );
+//                 })
